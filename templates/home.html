@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19 Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/home.css') }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Blinker' rel='stylesheet' type='text/css'>
+
+    {% block head %}
+
+    {% endblock %}
+
+</head>
+
+<body class="overlay">
+
+        <div id="header">
+            <img src="{{ url_for('static', filename='/images/covid.png') }}"  class="logo">
+        </div>
+
+        <div id="Bar">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container">
+                    <div class="collapse navbar-collapse" id="Navbar"></div>
+                </div>
+            </nav>
+        </div>
+
+{% block content %}
+<div class="container">
+
+    <form class="form-wrapper">
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for states.." title="Type in a name">
+    </form>
+
+    <table class="responsive-table" id="display-table">
+        <tbody>
+            <thead>
+                <tr style="font-family:Blinker;font-size: 18px;">
+                  <th scope="col" >State</th>
+                  <th scope="col" >Confirmed</th>
+                  <th scope="col" >Active</th>
+                  <th scope="col" >Recovered</th>
+                  <th scope="col" >Deceased</th>
+                </tr>
+            </thead>
+          {% for i in range(state_list|length) %}
+              <tr style="font-family:Blinker">
+                  <td scope="row" > {{ state_list[i] }}</td>
+                  <td data-title="Confirmed" data-type="confirmed">{{ confirmed_list[i] }}</td>
+                  <td data-title="Active"  data-type="active">{{ active_list[i] }}</td>
+                  <td data-title="Recovered"  data-type="recovered" >{{ recovered_list[i] }}</td>
+                  <td data-title="Deceased" data-type="deceased">{{ deceased_list[i] }}</td>
+              </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='/js/home.js') }}"></script>
+
+{% endblock %}
+</body>
+</html>

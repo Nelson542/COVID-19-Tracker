@@ -1,0 +1,306 @@
+body {
+
+background: linear-gradient(to left, #4B79A1 , #283E51);
+}
+
+.container {
+  display: block;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+  height:130px;
+}
+
+#header {
+  margin: 0px; padding: 0px;
+  position: relative;
+  background: #fff;
+  width: 100%;
+  height: 130px;
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /* IE 8 */
+  filter: alpha(opacity=50);  /* IE 5-7 */
+  -moz-opacity: 0.7;          /* Netscape */
+  -khtml-opacity: 0.7;        /* Safari 1.x */
+  opacity: 0.7;               /* Good browsers */
+}
+
+@media only screen and (max-width: 600px) {
+#header img {
+    width: 94%;
+    height: 96%;
+    padding-top: 13px;
+}
+
+#header {
+    height: 153px;
+}
+}
+
+
+
+
+
+
+.responsive-table {
+  width: 70%;
+  margin-bottom: 1.5em;
+  margin: auto;
+}
+.responsive-table thead {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.responsive-table thead th {
+  background-color: #333;
+  border: 2px solid #333;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+}
+.responsive-table thead th:first-of-type {
+  text-align: left;
+}
+.responsive-table tbody,
+.responsive-table tr,
+.responsive-table th,
+.responsive-table td {
+  display: block;
+  padding: 0;
+  text-align: left;
+  white-space: normal;
+}
+.responsive-table th,
+.responsive-table td {
+  padding: .5em;
+  vertical-align: middle;
+}
+
+.responsive-table tbody tr {
+  margin-bottom: 1em;
+  border: 4px solid #333;
+  color: #000;
+  cursor: pointer;
+}
+
+.responsive-table tbody tr:hover {
+  border: 4px solid #5e5e5e;
+  background-color: #4b6c94;
+}
+
+.responsive-table tbody tr:last-of-type {
+  margin-bottom: 0;
+}
+.responsive-table tbody td[scope="row"] {
+  background-color: #333;
+  color: white;
+  text-align: left;
+}
+
+.responsive-table tbody td[data-type][data-type=confirmed]  {
+  text-align: right;
+  background: linear-gradient(to left,#f5b8b8 , #f24b4b );
+  font-size: 16px;
+}
+
+.responsive-table tbody td[data-type=active] {
+  text-align: right;
+  background: linear-gradient(to right,#bedae6 , #1aafd9 );
+  font-size: 16px;
+}
+
+.responsive-table tbody td[data-type=recovered] {
+  text-align: right;
+  background: linear-gradient(to left,#a0ebac , #1ad64c);
+  font-size: 16px;
+}
+
+.responsive-table tbody td[data-type=deceased] {
+  text-align: right;
+  background: linear-gradient(to right,#c3c3c3 , #7a7878 );
+  font-size: 16px;
+}
+
+.responsive-table tbody td[data-title]:before {
+  content: attr(data-title);
+  float: left;
+  font-size: 0.9em;
+  color: #000;
+}
+
+.responsive-table tbody td {
+  text-align: right;
+  border-bottom: 2px solid #333;
+}
+
+@media (min-width: 52em) {
+  .responsive-table {
+    font-size: .9em;
+  }
+  .responsive-table thead {
+    position: relative;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+  }
+  .responsive-table tr {
+    display: table-row;
+  }
+
+  .responsive-table th,
+  .responsive-table td {
+    display: table-cell;
+    padding: .5em;
+  }
+
+
+  .responsive-table tbody {
+    display: table-row-group;
+  }
+  .responsive-table tbody tr {
+    display: table-row;
+    border-width: 2px;
+  }
+  .responsive-table tbody tr:nth-of-type(even) {
+    background-color: transparent;
+  }
+    .responsive-table tbody tr:nth-of-type(even):hover {
+    background-color: #4b6c94;
+  }
+
+  .responsive-table tbody td[scope="row"] {
+    background-color: transparent;
+    color: #c3c3c3;
+    text-align: left;
+  }
+
+  .responsive-table tbody td {
+    text-align: center;
+  }
+  .responsive-table tbody td[data-title]:before {
+    content: none;
+  }
+}
+@media (min-width: 62em) {
+  .responsive-table {
+    font-size: 1em;
+  }
+  .responsive-table th,
+  .responsive-table td {
+    padding: .75em .5em;
+  }
+}
+
+@media (min-width: 75em) {
+  .responsive-table th,
+  .responsive-table td {
+    padding: .75em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.cf:before, .cf:after{
+      content:"";
+      display:table;
+    }
+
+    .cf:after{
+      clear:both;
+    }
+
+    .cf{
+      zoom:1;
+    }
+
+    /*-------------------------------------*/
+
+    .form-wrapper {
+	background-color: #f6f6f6;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eae8e8));
+	background-image: -webkit-linear-gradient(top, #7097b9,#283E51);
+	background-image: -moz-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: -ms-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: -o-linear-gradient(top, #f6f6f6, #eae8e8);
+	background-image: linear-gradient(top, #f6f6f6, #eae8e8);
+	border-color: #dedede #bababa #aaa #bababa;
+	border-style: solid;
+	border-width: 0px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #435661, 0 4px 0 #435661, 0 5px 5px #444;
+	-moz-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+	box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #435661, 0 4px 0 #435661, 0 5px 5px #444;
+	margin: 35px auto;
+	overflow: hidden;
+	padding: 8px;
+	width: 450px;
+}
+
+.form-wrapper #myInput {
+	border: 0px solid #333;
+	-webkit-box-shadow: 0 1px 1px #333 inset, 0 1px 0 #333;
+	-moz-box-shadow: 0 1px 1px #333 inset, 0 1px 0 #333;
+	box-shadow: 0 1px 1px #333 inset, 0 1px 0 #333;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+  color: #c3c3c3;
+	float: center;
+	font: 16px;
+	font-family: "Blinker";
+	height: 30px;
+	padding: 10px;
+	width: 420px;
+	background-color: #333;
+}
+
+.form-wrapper #myInput:focus {
+	border-color: #c3c3c3;
+	-webkit-box-shadow: 0 1px 1px #c3c3c3 inset;
+	-moz-box-shadow: 0 1px 1px #c3c3c3 inset;
+	box-shadow: 0 1px 1px #c3c3c3 inset;
+	outline: 0;
+}
+
+.form-wrapper #myInput:-moz-placeholder,
+.form-wrapper #myInput:-ms-input-placeholder,
+.form-wrapper #myInput::-webkit-input-placeholder {
+	color: #c3c3c3;
+	font-weight: normal;
+}
+
+@media only screen and (max-width: 600px) {
+.form-wrapper {
+    width: 70%;
+
+}
+}
+
+@media only screen and (max-width: 600px) {
+.form-wrapper #myInput{
+    width: 96%;
+
+}
+}

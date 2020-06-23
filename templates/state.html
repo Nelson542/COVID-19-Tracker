@@ -1,0 +1,45 @@
+{% extends "home.html" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/state.css') }}">
+{% endblock %}
+
+{% block content %}
+
+{% if state %}
+
+<div class="container">
+<h1>{{ state }}</h1>
+
+    <form class="form-wrapper">
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for districts.." title="Type in a name">
+    </form>
+
+    <table class="responsive-table" id="display-table">
+        <tbody>
+            <thead>
+                <tr style="font-family:Blinker;font-size: 18px;">
+                  <th scope="col" >District</th>
+                  <th scope="col" >Confirmed</th>
+                  <th scope="col" >Active</th>
+                  <th scope="col" >Recovered</th>
+                  <th scope="col" >Deceased</th>
+                </tr>
+            </thead>
+          {% for i in range(district_list|length) %}
+              <tr style="font-family:Blinker">
+                  <td scope="row" > {{ district_list[i] }}</td>
+                  <td data-title="Confirmed" data-type="confirmed">{{ total_confirmed_district[i] }}</td>
+                  <td data-title="Active" data-type="active">{{ total_active_district[i] }}</td>
+                  <td data-title="Recovered" data-type="recovered">{{ total_recovered_district[i] }}</td>
+                  <td data-title="Deceased" data-type="deceased">{{ total_deceased_district[i] }}</td>
+              </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endif %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='/js/state.js') }}"></script>
+{% endblock %}
