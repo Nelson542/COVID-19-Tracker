@@ -20,7 +20,7 @@ function retrieve_state() {
                         var reply=data.reply;
                         if (reply=="success")
                         {
-                            window.location.href = '/display';
+                            window.location.href = '/districts';
                         }
                         else
                         {

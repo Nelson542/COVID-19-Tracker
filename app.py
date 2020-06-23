@@ -42,7 +42,7 @@ def state():
     return jsonify({'reply': 'success'})
 
 
-@app.route('/display', methods=['GET'])
+@app.route('/districts', methods=['GET'])
 def display():
     data = requests.get('https://api.covid19india.org/state_district_wise.json').json()
     output = dict(data)
